@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active | Your online dog walking platform</title>
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
+    <link rel="stylesheet" href="/styles/partials/page-walking-dogs.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+        rel="stylesheet">
+
+        <script src="/scripts/addField.js" defer></script>
+</head>
+
+<body id="page-walking-dogs">
+
+    <div id="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="/images/icons/back.svg" alt="Back">
+                </a>
+                <img src="/images/logo.svg" alt="Active">
+            </div>
+            <div class="header-content">
+                <strong>How amazing you want to walk a dog</strong>
+                <p>The first step, is to fill out this registration form</p>
+
+            </div>
+        </header>
+
+        <main>
+            <form action="" id="create-class">
+                <fieldset>
+                    <legend>Your data</legend>
+
+                    <div class="input-block">
+                        <label for="name">Full name</label>
+                        <input name="name" id="name" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="avatar">Link to your photo <small>(start with https: //)</small></label>
+                        <input name="avatar" id="avatar" type="url" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="whatsapp">Whatsapp <small>(only numbers)</small></label>
+                        <input name="whatsapp" id="whatsapp" type="number" required>
+                    </div>
+
+                    <div class="textarea-block">
+                        <label for="bio">Biography</label>
+                        <textarea name="bio" id="bio" required></textarea>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>About walkers</legend>
+                    <div class="select-block">
+                        <label for="subject">Dog Breeds</label>
+                        <select name="subject" id="subject">
+                            <option value="" disabled="" hidden="">Select an option</option>
+                            <option value="1">Akita</option>
+                            <option value="2">American Bulldog</option>
+                            <option value="3">Basset Hound</option>
+                            <option value="4">Beagle</option>
+                            <option value="5">Chihuahua</option>
+                            <option value="6">Dalmatian</option>
+                            <option value="7">Doberman Pinscher</option>
+                            <option value="8">French Bulldog</option>
+                            <option value="9">German Sherpherd Dog</option>
+                            <option value="10">German Spitz</option>
+                            <option value="11">Giant Schnauzer</option>
+                            <option value="12">Japanese Chin</option>
+                            <option value="13">Labrador Retrivier</option>
+                            <option value="14">Lhasa Apso</option>
+                            <option value="15">Maltese</option>
+                            <option value="16">Mastiff</option>
+                            <option value="1">Miniature Bull Terrier</option>
+                            <option value="18">Poodle</option>
+                            <option value="19">Pomeranian</option>
+                            <option value="20">Rottweiler</option>
+                        </select>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="cost">Cost of your hour <small> ($)</small></label>
+                        <input name="cost" id="cost" type="number" required>
+                    </div>
+
+                </fieldset>
+
+                <fieldset id="schedule-items">
+                    <legend>Available times
+                        <button id="add-time">+ New time</button>
+                    </legend>
+
+                    <div class="schedule-item">
+
+                        <div class="select-block">
+                            <label for="weekday">Day of the week</label>
+                            <select name="weekday[]" required>
+                                <option value="">Select an option</option>
+                                <option value="0">Sunday</option>
+                                <option value="1">Monday</option>
+                                <option value="2">Tuesday</option>
+                                <option value="3">Wednesday</option>
+                                <option value="4">Thursday</option>
+                                <option value="5">Friday</option>
+                                <option value="6">Saturday</option>
+                            </select>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="time_from">From</label>
+                            <input name="time_from[]" type="time" required>
+                        </div>
+
+                        <div class="input-block">
+                            <label for="time_to">To</label>
+                            <input name="time_to[]" type="time" required>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <footer>
+                <p>
+                    <img src="/images/icons/warning.svg" alt="Important warning">
+                    Important! <br> Fill in all the details
+                </p>
+                <button type="submit" form="create-class">Save registration</button>
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>
