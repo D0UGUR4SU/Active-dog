@@ -67,27 +67,30 @@
 
         <main>
 
-            {% for active in actives %}
-            <article class="care-item">
-                <header>
-                    <img src="{{active.avatar}}" alt="{{active.name}}">
-                    <div>
-                        <strong>{{active.name}}</strong>
-                        <span>{{active.subject}}</span>
-                    </div>
-                </header>
+            {%for active in actives %}
+                <article class="care-item">
+                    <header>
+                        <img 
+                            src="{{active.avatar}}" 
+                            alt="{{active.name}}">
+                        <div>
+                            <strong>{{active.name}}</strong>
+                            <span>{{active.subject}}</span>
+                        </div>
+                    </header>
 
-                <p>{{active.bio}}</p>
+                    <p>{{active.bio}}</p>
 
-                <footer>
-                    <p>{{active.cost}}</p>
-                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{active.whatsapp}}&
-                            text=I am interested in your service {{active.profession}} {{actie.name}}" class="button"
-                        target="_blank">
-                        <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Contact
-                    </a>
-                </footer>
-            </article>
+                    <footer>
+                        <p>Price hour / service<strong>$ {{active.cost}}</strong>
+                        </p>
+                        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{active.whatsapp}}&
+                                text=I am interested in your service {{active.subject}} {{active.name}}"
+                                class="button" target="_blank">
+                            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Contact
+                        </a>
+                    </footer>
+                </article>
             {%endfor%}
 
         </main>
