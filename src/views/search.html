@@ -67,31 +67,37 @@
 
         <main>
 
-            {%for active in actives %}
-                <article class="care-item">
-                    <header>
-                        <img 
-                            src="{{active.avatar}}" 
-                            alt="{{active.name}}">
-                        <div>
-                            <strong>{{active.name}}</strong>
-                            <span>{{active.subject}}</span>
-                        </div>
-                    </header>
+            {% if professionals == "" %}
+                <p class="no-results"> No Professionals found with your search.</p>
+            {% else %}
 
-                    <p>{{active.bio}}</p>
+                {%for Professional in professionals %}
+                    <article class="care-item">
+                        <header>
+                            <img 
+                                src="{{active.avatar}}" 
+                                alt="{{active.name}}">
+                            <div>
+                                <strong>{{active.name}}</strong>
+                                <span>{{active.subject}}</span>
+                            </div>
+                        </header>
 
-                    <footer>
-                        <p>Price hour / service<strong>$ {{active.cost}}</strong>
-                        </p>
-                        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{active.whatsapp}}&
-                                text=I am interested in your service {{active.subject}} {{active.name}}"
-                                class="button" target="_blank">
-                            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Contact
-                        </a>
-                    </footer>
-                </article>
-            {%endfor%}
+                        <p>{{active.bio}}</p>
+
+                        <footer>
+                            <p>Price hour / service<strong>$ {{active.cost}}</strong>
+                            </p>
+                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{ active.whatsapp }}&
+                                    text=I am interested in your service {{ active.subject }} {{ active.name }}"
+                                    class="button" target="_blank">
+                                <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Contact
+                            </a>
+                        </footer>
+                    </article>
+                {%endfor%}
+
+            {% endif %}
 
         </main>
     </div>
