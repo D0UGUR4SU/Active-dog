@@ -36,21 +36,12 @@ Database.then(async (db) => {
     const selectCareAndProfessionals = await db.all(`
         SELECT take_care.*, professionals.*
         FROM professionals
-<<<<<<< HEAD
         JOIN take_care ON (take_care.professional_id = professionals.id)
         WHERE take_care.professional_id = 1;
         `)
     //console.log(selectCareAndProfessionals) 
 
     const selectCareSchedules = await db.all(`
-=======
-        JOIN take_care ON (take_care.professionals_id = professionals.id)
-        WHERE take_care.professionals_id = 1;
-    `)
-    //console.log(selectCareAndProfessionals)
-
-    constselectCareSchedules  = await db.all(`
->>>>>>> master
         SELECT care_schedule.*
         FROM care_schedule
         WHERE care_schedule.take_care_id = "1"
@@ -59,5 +50,5 @@ Database.then(async (db) => {
         AND care_schedule.time_to > "1200"
     `)
 
-    console.log(selectCareSchedules)
+    //console.log(selectCareSchedules)
 })
