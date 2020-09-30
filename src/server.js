@@ -2,7 +2,7 @@ const express = require('express')
 const server = express()
 
 <<<<<<< HEAD
-const { pageLanding, pageSearch, pageCareDogs, saveForm} = require('./pages')
+const { pageLanding, pageSearch, pageCareDogs, saveForm } = require('./pages')
 =======
 const { pageLanding, pageSearch, pageCareDogs, saveForm } = require('./pages')
 >>>>>>> master
@@ -15,7 +15,7 @@ nunjucks.configure('src/views', {
 
 server
 <<<<<<< HEAD
-    .use(express.urlencoded({ extended: true}))
+    .use(express.urlencoded({ extended: true }))
 =======
     .use(express.urlencoded({ extended: true }))
 >>>>>>> master
