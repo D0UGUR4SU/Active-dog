@@ -6,7 +6,6 @@ Database.then(async (db) => {
     professional = {
         name: "Douglas Souza",
         avatar: "https://avatars2.githubusercontent.com/u/50157211?s=60&v=4",
-<<<<<<< HEAD
         whatsapp: "1198855611",
         bio: "Passionate about animals and everything that involves the universe of pets."
     }
@@ -14,17 +13,6 @@ Database.then(async (db) => {
     take_care = {
         subject: 4,
         cost: "15"
-=======
-        whatsapp: "11988556611",
-        bio: "Passionate about animals and everything that involves the universe of pets.",
-
-    }
-
-    take_care = {
-        subject: "Dog Walker",
-        cost: "15",
-
->>>>>>> master
     }
 
     care_schedules = [
@@ -40,11 +28,7 @@ Database.then(async (db) => {
         }
     ]
 
-<<<<<<< HEAD
     //await createProfessional(db, { professional, take_care, care_schedules })
-=======
-    //await createProfessional(db, {professional, take_care, care_schedules})
->>>>>>> master
 
     const selectedProfessionals = await db.all("SELECT * FROM professionals")
     //console.log(selectedProfessionals)
@@ -71,19 +55,9 @@ Database.then(async (db) => {
         FROM care_schedule
         WHERE care_schedule.take_care_id = "1"
         AND care_schedule.weekday = "0"
-<<<<<<< HEAD
         AND care_schedule.time_from <= "520"
         AND care_schedule.time_to > "1200"
     `)
 
     console.log(selectCareSchedules)
 })
-=======
-        AND care_schedule.time_from <= "420"
-        AND care_schedule.time_to > "1300"
-        
-    `)
-    //console.log(constselectCareSchedules)
-})
-
->>>>>>> master
