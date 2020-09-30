@@ -1,7 +1,11 @@
 const express = require('express')
 const server = express()
 
+<<<<<<< HEAD
 const { pageLanding, pageSearch, pageCareDogs, saveForm} = require('./pages')
+=======
+const { pageLanding, pageSearch, pageCareDogs, saveForm } = require('./pages')
+>>>>>>> master
 
 const nunjucks = require('nunjucks')
 nunjucks.configure('src/views', {
@@ -10,7 +14,11 @@ nunjucks.configure('src/views', {
 })
 
 server
+<<<<<<< HEAD
     .use(express.urlencoded({ extended: true}))
+=======
+    .use(express.urlencoded({ extended: true }))
+>>>>>>> master
     .use(express.static("public"))
     .get("/", pageLanding)
     .get("/search", pageSearch)

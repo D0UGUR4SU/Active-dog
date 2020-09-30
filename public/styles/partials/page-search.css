@@ -125,6 +125,13 @@
     margin-left: 1.6rem;
 }
 
+#page-search main .no-results {
+    max-width: 30rem;
+    margin: 12rem auto;
+    text-align: center;
+    color: red ;
+}
+
 .care-item footer button:hover {
     background: var(--color-secondary-dark);
 }
