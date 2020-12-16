@@ -136,6 +136,13 @@
     background: var(--color-secondary-dark);
 }
 
+#page-search main .no-results{
+    max-width: 30rem;
+    margin: 12rem auto;
+    text-align: center;
+    color: red;
+}
+
 @media (min-width:700px) {
     #page-search #container {
         max-width: 100vw;

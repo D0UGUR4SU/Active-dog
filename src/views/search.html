@@ -35,24 +35,25 @@
                         <select name="subject[]" id="subject">
                             <option value="">Select an option</option>
 
-                            {%for subject in subjects %}
-                            <option value="{{loop.index}}" {{ "selected" if filters.subject == loop.index }}>
-                                {{subject}}
-                            </option>
-                            {%endfor%}
+                            {% for subject in subjects %}
+                                <option value="{{loop.index}}" {{ "selected" if filters.subject == loop.index }}>
+                                    {{subject}}
+                                </option>
+                            {% endfor %}
 
                         </select>
                     </div>
+
                     <div class="select-block">
                         <label for="weekday">Day of the week</label>
                         <select name="weekday[]" id="weekday">
                             <option value="">Select an option</option>
 
-                            {%for weekday in weekdays %}
-                            <option value="{{loop.index0}}" {{ "selected" if filters.weekday == loop.index0 }}>
-                                {{weekday}}
-                            </option>
-                            {%endfor%}
+                            {% for weekday in weekdays %}
+                                <option value="{{loop.index0}}" {{ "selected" if filters.weekday == loop.index0 }}>
+                                    {{weekday}}
+                                </option>
+                            {% endfor %}
 
                         </select>
                     </div>
@@ -68,40 +69,38 @@
         <main>
 
             {% if professionals == "" %}
-                <p class="no-results"> No Professionals found with your search.</p>
+                <p class="no-results">No professional found with your search.</p>
+
             {% else %}
 
-                {%for Professional in professionals %}
+                {% for professional in professionals %}
                     <article class="care-item">
                         <header>
-                            <img 
-                                src="{{active.avatar}}" 
-                                alt="{{active.name}}">
+                            <img src="{{professional.avatar}}" alt="{{professional.name}}">
                             <div>
-                                <strong>{{active.name}}</strong>
-                                <span>{{active.subject}}</span>
+                                <strong>{{professional.name}}</strong>
+                                <span>{{professional.subject}}</span>
                             </div>
                         </header>
 
-                        <p>{{active.bio}}</p>
+                        <p>{{professional.bio}}</p>
 
                         <footer>
-                            <p>Price hour / service<strong>$ {{active.cost}}</strong>
+                            <p>Price hour / service<strong>$ {{professional.cost}}</strong>
                             </p>
-                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{ active.whatsapp }}&
-                                    text=I am interested in your service {{ active.subject }} {{ active.name }}"
-                                    class="button" target="_blank">
+                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{ professional.whatsapp }}&
+                                        text=I am interested in your service {{ professional.subject }} {{ professional.name }}"
+                                class="button" target="_blank">
                                 <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Contact
                             </a>
                         </footer>
                     </article>
-                {%endfor%}
+                {% endfor %}
 
             {% endif %}
 
         </main>
     </div>
-
 </body>
 
 </html>

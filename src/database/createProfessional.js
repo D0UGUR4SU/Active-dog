@@ -20,7 +20,7 @@ module.exports = async function (db, { professional, take_care, care_schedules }
             INSERT INTO take_care (
                 subject,
                 cost,
-                professionals_id
+                professional_id
             ) VALUES (
                 "${take_care.subject}",
                 "${take_care.cost}",

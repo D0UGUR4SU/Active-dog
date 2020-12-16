@@ -15,7 +15,7 @@ function execute(db) {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         subject INTEGER,
         cost TEXT,
-        professionals_id INTEGER
+        professional_id INTEGER
     );
                 
     CREATE TABLE IF NOT EXISTS care_schedule (
